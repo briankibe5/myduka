@@ -4,7 +4,9 @@ import psycopg2
 app = Flask(__name__)
 
 #Connect to an existing database
-conn = psycopg2.connect(user="postgres", password="briankibe", host="localhost", port="5432", database="postgres")
+# conn = psycopg2.connect(user="postgres", password="briankibe", host="localhost", port="5432", database="postgres")
+conn = psycopg2.connect(user="sbppptuvedzdmz", password="4195135a2aa915cea64c84560ad518e8f0599765c4dbfc6811f804116d2d6971", host="ec2-54-228-32-29.eu-west-1.compute.amazonaws.com", port="5432", database="dfj3bpv8m5dmgl")
+
 #Open a cursor to perform database operations
 cur = conn.cursor()
 
