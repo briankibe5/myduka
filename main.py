@@ -10,7 +10,7 @@ conn = psycopg2.connect(user="sbppptuvedzdmz", password="4195135a2aa915cea64c845
 #Open a cursor to perform database operations
 cur = conn.cursor()
 cur.execute("CREATE TABLE IF NOT EXISTS products (id serial PRIMARY KEY, name VARCHAR ( 100 ) NOT NULL,buying_price NUMERIC(14, 2), selling_price NUMERIC(14, 2), stock_quantity INT DEFAULT 0);")
-cur.execute("CREATE TABLE IF NOT EXISTS sales    (id serial PRIMARY KEY, pid int, quantity numeric(5,2), created_at TIMESTAMP, CONSTRAINT myproduct FOREIGN KEY(pid) on UPDATE CASCADE on DELETE restrict);")
+cur.execute("create table IF NOT EXISTS  sales (id serial, pid int, quantity numeric(5,2), created_at timestamp, primary key(id),constraint myproduct foreign key(pid) references products(id) on update cascade on delete restrict);")
 #insert query 
 #commit changes you make to the database
 conn.commit()
@@ -18,7 +18,7 @@ conn.commit()
 
 
 # home route
-@app.route('/index')
+@app.route('/')
 def index():
 
    return render_template('index.html')
