@@ -9,88 +9,65 @@
     <title>duka</title>
 </head>
 <body>
-    <!-- navbar start -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid" style="margin-left: 4.7%;">
-          <a class="navbar-brand" href="/index" style="font-family: Times New Roman;">Duka</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/index">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/dashboard">Dashboard</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/sales">Sales</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/inventories">Inventories</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/stock">Stock</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-    </nav>
-    <!-- navbar end -->
+  <!-- navbar start -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid" style="margin-left: 4.7%;">
+      <a class="navbar-brand" href="/index" style="font-family: Times New Roman;">Duka</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/index">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/dashboard">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/sales">Sales</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/inventories">Inventories</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- navbar end -->
   
+
     <style>
-      body, html {
-        height: 100%;
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      
-      .hero-image {
-        
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("");
-        height: 560px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+      .container {
         position: relative;
-      }
-      
-      .hero-text {
         text-align: center;
+        color: white;
+      }
+      .centered {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        color: white;
       }
       
-      .hero-text button {
-        border: none;
-        outline: 0;
-        display: inline-block;
-        padding: 10px 25px;
-        color: black;
-        background-color: rgb(128, 173, 232);
-        text-align: center;
-        cursor: pointer;
-      }
-      
-      .hero-text button:hover {
-        background-color:rgb(128, 173, 232);
-        color: white;
-      }
       </style>
       </head>
       <body>
       
-      <div class="hero-image">
-        <div class="hero-text">
-          <h1 style="font-size:50px">Welcome To Our Online Store</h1>
-          <p>We Bring Good Things to You </p>
-          <a class="btn btn-primary" href="/inventories" role="button">Start Shopping</a>
+      <div class="container">
+        <div class="index-image" style="margin-top:20px; height:75%;">
+          <img src="/static/small-shopping-cart-blue-background_661495-6761.webp" alt="Snow" style="width:100%;">
+        </div>
+        <div class="centered">
+           <div class="index-image-text">
+                <h1 style="font-size:30px; color: black;">Welcome To Our Online Store</h1>
+                <p style="color: black;">We Bring Good Things to You </p>
+                <a class="btn btn-primary" href="/inventories" role="button">Start Shopping</a>
+           </div>
         </div>
       </div>
+      </body>
       
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
