@@ -49,64 +49,69 @@
   <!-- navbar end -->
   <!-- navbar end -->
 
-  
-<!-- div holding everything -->
-<div class="everybody" style="display: flex;">
 
-  <!-- sidebar start -->
-  <div class="col-3" style="margin-left: 3.5%; margin-top:5%; width:250px;color: black;">
-    <ul class="list-group">
-      <li class="list-group-item" style="background-color: rgb(128, 173, 232);">
-        <!-- avatar -->
-        <!-- <img src="/static/images/stock.jpg" class="rounded float-left mr-3" alt="Dashboard Avatar" width="50px" height="30px"> -->
-        <!-- heading -->
-        <h3><i class="fa fa-bars" aria-hidden="true"></i> Nav Menu</h3>
-      </li>
-      <a href="/dashboard">
-        <li class="list-group-item" style="background-color: rgb(183, 191, 201);"><i class="fa fa-tachometer" style="color: white;" aria-hidden="true"></i>Dashboard</li>
-      </a>
-      <a href="/inventories">
-        <li class="list-group-item" style="background-color: rgb(183, 191, 201);"><i class="fa fa-database" style="color: white;" aria-hidden="true"></i> Inventories</li>
-      </a>
-      <a href="/sales">
-        <li class="list-group-item" style="background-color: rgb(183, 191, 201);"><i class="fa fa-money" style="color: white;" aria-hidden="true"></i> Sales</li>
-      </a>
-      <a href="/stock">
-        <li class="list-group-item" style="background-color: rgb(183, 191, 201);"><i class="fa fa-dropbox" style="color: white;" aria-hidden="true"></i> Stock</li>
-      </a>
-      <a href="/users">
-        <li class="list-group-item" style="background-color: rgb(183, 191, 201)"><i class="fa fa-user" style="color: white;" aria-hidden="true"></i> Users</li>
-      </a>
-    </ul>
-</div>
-<!-- sidebar end -->
+  <!-- div holding everything -->
+  <div class="everybody" style="display: flex;">
 
-<!-- table start -->
-<table class="table table-bordered" style="width: 700px; margin-left:5%; margin-top:5%;">
-  <thead class="table-dark">
-    <tr>
-      <th scope="col">id</th>
-      <th scope="col">pid</th>
-      <th scope="col">quantity</th>
-      <th scope="col" style="width: 200px;">created_at</th>
-    </tr>
-  </thead>
-  {% for i in records %}
-  <tbody>
-    <tr>
-      <th scope="row">{{i[0]}}</th>
-      <td>{{i[1]}}</td>
-      <td>{{i[2]}}</td>
-      <td>{{i[3]}}</td>
-    </tr>
-  </tbody>
-  {% endfor %}
- </table>
-<!-- table end -->
+    <!-- sidebar start -->
+    <div class="col-3" style="margin-left: 3.5%; margin-top:5%; width:250px;color: black;">
+      <ul class="list-group">
+        <li class="list-group-item" style="background-color: rgb(128, 173, 232);">
+          <!-- avatar -->
+          <!-- <img src="/static/images/stock.jpg" class="rounded float-left mr-3" alt="Dashboard Avatar" width="50px" height="30px"> -->
+          <!-- heading -->
+          <h3><i class="fa fa-bars" aria-hidden="true"></i> Nav Menu</h3>
+        </li>
+        <a href="/dashboard">
+          <li class="list-group-item" style="background-color: rgb(183, 191, 201);"><i class="fa fa-tachometer"
+              style="color: white;" aria-hidden="true"></i>Dashboard</li>
+        </a>
+        <a href="/inventories">
+          <li class="list-group-item" style="background-color: rgb(183, 191, 201);"><i class="fa fa-database"
+              style="color: white;" aria-hidden="true"></i> Inventories</li>
+        </a>
+        <a href="/sales">
+          <li class="list-group-item" style="background-color: rgb(183, 191, 201);"><i class="fa fa-money"
+              style="color: white;" aria-hidden="true"></i> Sales</li>
+        </a>
+        <a href="/stock">
+          <li class="list-group-item" style="background-color: rgb(183, 191, 201);"><i class="fa fa-dropbox"
+              style="color: white;" aria-hidden="true"></i> Stock</li>
+        </a>
+        <a href="/users">
+          <li class="list-group-item" style="background-color: rgb(183, 191, 201)"><i class="fa fa-user"
+              style="color: white;" aria-hidden="true"></i> Users</li>
+        </a>
+      </ul>
+    </div>
+    <!-- sidebar end -->
 
-</div>
+    <!-- table start -->
+    <table class="table table-bordered" style="width: 700px; margin-left:5%; margin-top:5%;">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">pid</th>
+          <th scope="col">quantity</th>
+          <th scope="col" style="width: 200px;">created_at</th>
+        </tr>
+      </thead>
+      {% for i in records %}
+      <tbody>
+        <tr>
+          <th scope="row">{{i[0]}}</th>
+          <td>{{i[1]}}</td>
+          <td>{{i[2]}}</td>
+          <td>{{i[3]}}</td>
+        </tr>
+      </tbody>
+      {% endfor %}
+    </table>
+    <!-- table end -->
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
