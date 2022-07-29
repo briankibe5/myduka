@@ -1,9 +1,11 @@
 from datetime import datetime
+from waitress import serve
 from flask import Flask, redirect, render_template , request, url_for
 import psycopg2
+
+
 app = Flask(__name__)
 # 
-
 #Connect to an existing database
 conn = psycopg2.connect(user="sbppptuvedzdmz", password="4195135a2aa915cea64c84560ad518e8f0599765c4dbfc6811f804116d2d6971", host="ec2-54-228-32-29.eu-west-1.compute.amazonaws.com", port="5432", database="dfj3bpv8m5dmgl")
 
@@ -105,9 +107,9 @@ def view_sales(pid):
 		rows = cur.fetchall()
 		return render_template("sales.html", rows = rows) 
 
-from waitress import serve
+
 # import gunicorn.app.base
 # import gunicorn.util
 
-
-app.run()
+if __name__ =="__main__":
+   app.run(debug=True)
