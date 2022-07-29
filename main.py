@@ -5,12 +5,12 @@ app = Flask(__name__)
 # 
 
 #Connect to an existing database
-conn = psycopg2.connect(user="sbppptuvedzdmz", password="4195135a2aa915cea64c84git add .560ad518e8f0599765c4dbfc6811f804116d2d6971", host="ec2-54-228-32-29.eu-west-1.compute.amazonaws.com", port="5432", database="dfj3bpv8m5dmgl")
+conn = psycopg2.connect(user="sbppptuvedzdmz", password="4195135a2aa915cea64c84560ad518e8f0599765c4dbfc6811f804116d2d6971", host="ec2-54-228-32-29.eu-west-1.compute.amazonaws.com", port="5432", database="dfj3bpv8m5dmgl")
 
 #Open a cursor to perform database operations
 cur = conn.cursor()
 cur.execute("CREATE TABLE IF NOT EXISTS products (id serial PRIMARY KEY, name VARCHAR ( 100 ) NOT NULL,buying_price NUMERIC(14, 2), selling_price NUMERIC(14, 2), stock_quantity INT DEFAULT 0);")
-cur.execute("CREATE TABLE IF NOT EXISTS  sales (id serial, pid int, quantity numeric(5,2), created_at timestamp, primary key(id),constraint myproduct foreign key(pid) references products(id) on update cascade on delete restrict);")
+cur.execute("create table IF NOT EXISTS  sales (id serial, pid int, quantity numeric(5,2), created_at timestamp, primary key(id),constraint myproduct foreign key(pid) references products(id) on update cascade on delete restrict);")
 #insert query 
 #commit changes you make to the database
 conn.commit()
