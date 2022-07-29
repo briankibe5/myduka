@@ -25,11 +25,7 @@ def index():
 
    return render_template('index.html')
 
-# home route
-@app.route('/index')
-def home_page():
 
-   return render_template('index.html')
 
 
 # inventories route
@@ -112,4 +108,4 @@ def view_sales(pid):
 # import gunicorn.util
 
 if __name__ =="__main__":
-   app.run(debug=True)
+   app.run()
