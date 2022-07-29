@@ -1,5 +1,4 @@
 from datetime import datetime
-from waitress import serve
 from flask import Flask, redirect, render_template , request, url_for
 import psycopg2
 
