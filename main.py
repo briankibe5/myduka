@@ -93,17 +93,20 @@ def add_sales():
    cur.execute("INSERT INTO sales (pid, quantity, created_at ) VALUES (%s,%s,%s)",(pid,quantity, created_at ))
    conn.commit()
    return redirect(url_for("sales"))
+   
 # edit product
+
 
 # delete product
 
-#a new route for viewing sales per product
-@app.route('/sales/<int:pid>')
-def view_sales(pid):
-     # query the sales for that product_id
-		cur.execute("SELECT * FROM sales WHERE pid= %s;" ,[pid])
-		rows = cur.fetchall()
-		return render_template("sales.html", rows = rows) 
+
+# a new route for viewing sales per product
+# @app.route('/sales/<int:pid>')
+# def view_sales(pid):
+      #  query the sales for that product_id
+		# cur.execute("SELECT * FROM sales WHERE pid= %s;" ,[pid])
+		# rows = cur.fetchall()
+		# return render_template("sales.html", rows = rows) 
 
 
 # import gunicorn.app.base
