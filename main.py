@@ -1,12 +1,14 @@
 from datetime import datetime
+from click import BadParameter
 from flask import Flask, redirect, render_template , request, url_for
 import psycopg2
 
 
 app = Flask(__name__)
-# 
-#Connect to an existing database
-conn = psycopg2.connect(user="sbppptuvedzdmz", password="4195135a2aa915cea64c84560ad518e8f0599765c4dbfc6811f804116d2d6971", host="ec2-54-228-32-29.eu-west-1.compute.amazonaws.com", port="5432", database="dfj3bpv8m5dmgl")
+
+# Connect to an existing database
+# conn = psycopg2.connect(user="sbppptuvedzdmz", password="4195135a2aa915cea64c84560ad518e8f0599765c4dbfc6811f804116d2d6971", host="ec2-54-228-32-29.eu-west-1.compute.amazonaws.com", port="5432", database="dfj3bpv8m5dmgl")
+conn = psycopg2.connect(user="postgres", password="briankibe", host="localhost", port="5432", database="postgres")
 
 #Open a cursor to perform database operations
 cur = conn.cursor()
@@ -98,6 +100,15 @@ def add_sales():
 
 
 # delete product
+@app.route('/delete_product' ,methods = ['POST'])
+def delete_product():
+   pname=request.form["delete_product_name"]
+   bp=request.form["delete_product_bp"]
+   sp=request.form["delete_product_sp"]
+   quantity=request.form["delete_product_quantity"]
+   cur.execute("DELETE FROM products WHERE (name, buying_price, selling_price, stock_quantity) VALUES (%s,%s, %s, %s)",(pname,bp,sp,quantity))
+   conn.commit()
+   return redirect(url_for("inventories"))
 
 
 # a new route for viewing sales per product
